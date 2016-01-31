@@ -26,7 +26,7 @@ class StuffsController < ApplicationController
   # POST /stuffs.json
   def create
 		@garrage = Garrage.find(params[:garrage_id])
-    @stuff = Stuff.new(stuff_params)
+    @stuff = @garrage.stuffs.new(stuff_params)
 
     respond_to do |format|
       if @stuff.save
