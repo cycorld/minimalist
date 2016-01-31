@@ -14,7 +14,7 @@ class StuffsController < ApplicationController
 
   # GET /stuffs/new
   def new
-		@garrage = Garrage.find(params[:garrage_id])
+    @garrage = Garrage.find(params[:garrage_id])
     @stuff = Stuff.new
   end
 
@@ -25,7 +25,7 @@ class StuffsController < ApplicationController
   # POST /stuffs
   # POST /stuffs.json
   def create
-		@garrage = Garrage.find(params[:garrage_id])
+    @garrage = Garrage.find(params[:garrage_id])
     @stuff = @garrage.stuffs.new(stuff_params)
 
     respond_to do |format|
