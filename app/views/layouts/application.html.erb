@@ -15,21 +15,9 @@
   </head>
 
   <body>
-    <script type="text/javascript">
 
-						var map;
-						function initMap() {
-								map = new google.maps.Map(document.getElementById('map'), {
-										center: {lat: 37.5639, lng: 126.9031},
-										zoom: 14
-								});
-						}
-
-    </script>
-    <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBetvh03PhdJcNsggLq66l8HeO04SJCpDs&callback=initMap">
-    </script>
-  </body>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
 
     <nav>
       <div class="nav-wrapper">
@@ -44,5 +32,19 @@
 
     <%= yield %>
 
+    <script type="text/javascript">
+
+						var map;
+						function initMap() {
+								map = new google.maps.Map(document.getElementById('map'), {
+										center: {lat: 37.5639, lng: 126.9031},
+										zoom: 14
+								});
+						}
+
+    </script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBetvh03PhdJcNsggLq66l8HeO04SJCpDs&callback=initMap">
+    </script>
   </body>
 </html>
