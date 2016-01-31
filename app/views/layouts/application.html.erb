@@ -26,6 +26,11 @@
           <li><a href="/">Home</a></li>
           <li><a href="/users/sign_in">Log In</a></li>
           <li><a href="/users/sign_up">Sign Up</a></li>
+          <li>
+               <% if user_signed_in? %>
+                 <%= link_to 'Sign out', destroy_user_session_path, :method => 'delete' %>
+               <% end %>
+          </li>
         </ul>
       </div>
     </nav>
