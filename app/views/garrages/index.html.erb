@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Garrages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Address</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @garrages.each do |garrage| %>
+      <tr>
+        <td><%= garrage.address %></td>
+        <td><%= garrage.latitude %></td>
+        <td><%= garrage.longitude %></td>
+        <td><%= link_to 'Show', garrage %></td>
+        <td><%= link_to 'Edit', edit_garrage_path(garrage) %></td>
+        <td><%= link_to 'Destroy', garrage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Garrage', new_garrage_path %>

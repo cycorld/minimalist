@@ -1,0 +1,2 @@
+class Garrage < ApplicationRecord
+end
