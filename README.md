@@ -1,24 +1,19 @@
-## README
+# 지도기반 물품 자랑 서비스
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 버전
 
-Things you may want to cover:
+- Rails 5.0pre
 
-* Ruby version
+## 배경
 
-* System dependencies
+1. 국내에는 거라지세일 문화가 없는데(차고가 없으니까) 인터넷으로 해결하겠다.
+1. 중간 결제 같은거 없이 지역 기반 직거래
+1. 거래가 목적이 아니라 내가 소유한 물건들을 자랑하는게 메인, 필요없어지는 것들은 나눔(무료, 소액, 중고판매 등)
+1. 미니멀리즘에 심취하여 물건을 그냥 버리자니 아깝고 서비스 하나 만들어서 내 물건 상황도 기록하면서 필요한 사람들에게 나눠주기 위해
 
-* Configuration
+## 스펙
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- 구글 지도에 '차고'가 표시된다
+- '차고'를 자신의 집이나 회사에 세울 수 있다
+- '차고'에 물건을 사진과 상세 설명을 등록한다
+- 판매 등록 가능하도록
