@@ -5,8 +5,7 @@
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %> <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
 				<style type="text/css">
 						html, body { height: 100%; margin: 0; padding: 0; }
@@ -25,7 +24,7 @@
                <% if user_signed_in? %>
                  <li><%= link_to 'Sign Out', destroy_user_session_path, :method => 'delete' %></li>
                  <li><%= link_to 'Garrages', garrages_path %></li>
-                 <li><%= link_to 'Stuffs', garrage_stuffs_path(Stuff.all) %></li>
+                 <li><%= link_to 'Stuffs', stuffs_path %></li>
                <% else %>
                  <li><%= link_to 'Log In', new_user_session_path %></li>
                  <li><%= link_to 'Sign Up', destroy_user_session_path, :method => 'delete' %></li>
