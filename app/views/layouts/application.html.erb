@@ -57,9 +57,12 @@
         });
 
         google.maps.event.addListener(map, 'click', function(event) {
-          addMarker(event.latLng, map);
           location.href="/garrages/new?lat=" + event.latLng.lat() + "&lng=" + event.latLng.lng();
         });
+
+        <% Garrage.all.each do |g| %>
+            addMarker(new google.maps.LatLng(<%= g.latitude %>,<%= g.longitude %>), map);
+        <% end %>
       }
 
       function addMarker(location, map) {
