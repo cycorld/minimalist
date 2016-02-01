@@ -16,24 +16,26 @@
 
   <body>
 
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
 
     <nav>
       <div class="nav-wrapper">
         <a href="#" class="brand-logo">MustHave</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="/">Home</a></li>
-          <li><a href="/users/sign_in">Log In</a></li>
-          <li><a href="/users/sign_up">Sign Up</a></li>
-          <li>
                <% if user_signed_in? %>
-                 <%= link_to 'Sign out', destroy_user_session_path, :method => 'delete' %>
+                 <li><%= link_to 'Sign Out', destroy_user_session_path, :method => 'delete' %></li>
+                 <li><%= link_to 'Garrages', garrages_path %></li>
+                 <li><%= link_to 'Stuffs', garrage_stuffs_path(Stuff.all) %></li>
+               <% else %>
+                 <li><%= link_to 'Log In', new_user_session_path %></li>
+                 <li><%= link_to 'Sign Up', destroy_user_session_path, :method => 'delete' %></li>
                <% end %>
-          </li>
         </ul>
       </div>
     </nav>
+ 
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
 
     <%= yield %>
 
