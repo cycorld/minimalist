@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   resources :stuffs, only: [:index]
 
   resources :garrages do
-    resources :stuffs
+    resources :stuffs do
+      resources :comments, :only => [:create]
+ #     resources :comments, except: [:index, :new, :edit]
+    end
   end
 
 
