@@ -27,3 +27,18 @@
 
 <%= link_to 'Edit', edit_stuff_path(@stuff) %> |
 <%= link_to 'Back', stuffs_path %>
+
+
+<hr>
+
+
+<%= form_for[@comment] do |f| %>
+  <div class="field">
+    <%= f.label :message %>
+    <%= f.text_field :message %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

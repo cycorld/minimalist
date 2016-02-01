@@ -10,17 +10,30 @@ class StuffsController < ApplicationController
     else
       @stuffs = Stuff.all
     end
+
   end
 
   # GET /stuffs/1
   # GET /stuffs/1.json
   def show
+    garrage = Garrage.find(params[:garrage_id])
+    @stuff = garrage.stuffs.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @comment }
+    end
   end
 
   # GET /stuffs/new
   def new
-    @garrage = Garrage.find(params[:garrage_id])
-    @stuff = Stuff.new
+    garrage = Garrage.find(params[:garrage_id])
+    @stuff = garrage.stuffs.build
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.xml  { render :xml => @comment }
+    end
   end
 
   # GET /stuffs/1/edit
@@ -30,8 +43,9 @@ class StuffsController < ApplicationController
   # POST /stuffs
   # POST /stuffs.json
   def create
-    @garrage = Garrage.find(params[:garrage_id])
-    @stuff = @garrage.stuffs.new(stuff_params)
+    garrage = Garrage.find(params[:garrage_id])
+    @stuff = garrage.stuffs.new(params[:stuff])
+   # @stuff = @garrage.stuffs.new(stuff_params)
 
     respond_to do |format|
       if @stuff.save
