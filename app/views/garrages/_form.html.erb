@@ -18,12 +18,12 @@
 
   <div class="field">
     <%= f.label :latitude %>
-    <%= f.text_field :latitude %>
+    <%= f.text_field :latitude, value: params[:lat] %>
   </div>
 
   <div class="field">
     <%= f.label :longitude %>
-    <%= f.text_field :longitude %>
+    <%= f.text_field :longitude, value: params[:lng] %>
   </div>
 
   <div class="actions">

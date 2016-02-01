@@ -58,7 +58,7 @@
 
         google.maps.event.addListener(map, 'click', function(event) {
           addMarker(event.latLng, map);
-          location.href="/garrages/new?lat=" + event.latLng.lat() + "?lng=" + event.latLng.lng();
+          location.href="/garrages/new?lat=" + event.latLng.lat() + "&lng=" + event.latLng.lng();
         });
       }
 
