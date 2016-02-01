@@ -22,9 +22,9 @@
         <td><%= stuff.content %></td>
         <td><%= stuff.price %></td>
         <td><%= stuff.status %></td>
-        <td><%= link_to 'Show', stuff %></td>
-        <td><%= link_to 'Edit', edit_stuff_path(stuff) %></td>
-        <td><%= link_to 'Destroy', stuff, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', garrage_stuff_path(stuff.garrage,stuff) %></td>
+        <td><%= link_to 'Edit', edit_garrage_stuff_path(stuff.garrage,stuff) %></td>
+        <td><%= link_to 'Destroy', garrage_stuff_path(stuff.garrage,stuff), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Stuff', new_garrage_stuff_path %>
+<%# link_to 'New Stuff', new_garrage_stuff_path %>

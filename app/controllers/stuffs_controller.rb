@@ -4,7 +4,12 @@ class StuffsController < ApplicationController
   # GET /stuffs
   # GET /stuffs.json
   def index
-    @stuffs = Stuff.all
+    @garrage = Garrage.find_by(id: params[:garrage_id])
+    if params[:garrage_id].present?
+      @stuffs = @garrage.stuffs
+    else
+      @stuffs = Stuff.all
+    end
   end
 
   # GET /stuffs/1
