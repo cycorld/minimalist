@@ -44,12 +44,13 @@ class StuffsController < ApplicationController
   # POST /stuffs.json
   def create
     garrage = Garrage.find(params[:garrage_id])
-    @stuff = garrage.stuffs.new(params[:stuff])
+    @stuff = garrage.stuffs.new(stuff_params)
+    @stuff.garrage_id = garrage.id
    # @stuff = @garrage.stuffs.new(stuff_params)
 
     respond_to do |format|
       if @stuff.save
-        format.html { redirect_to @stuff, notice: 'Stuff was successfully created.' }
+        format.html { redirect_to [@stuff.garrage, @stuff], notice: 'Stuff was successfully created.' }
         format.json { render :show, status: :created, location: @stuff }
       else
         format.html { render :new }
