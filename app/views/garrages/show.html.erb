@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @garrage.address %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @garrage.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @garrage.longitude %>
+</p>
+
+<%= link_to 'Edit', edit_garrage_path(@garrage) %> |
+<%= link_to 'Back', garrages_path %>
