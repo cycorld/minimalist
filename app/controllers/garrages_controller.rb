@@ -25,7 +25,7 @@ class GarragesController < ApplicationController
   # POST /garrages.json
   def create
     @garrage = Garrage.new(garrage_params)
-    @garrage.update_attribute(:user_id, current_user.id)
+    @garrage.user_id = current_user.id
 
     respond_to do |format|
       if @garrage.save
