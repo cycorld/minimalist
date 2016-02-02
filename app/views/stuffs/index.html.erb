@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Stuffs</h1>
+<% unless @garrage.nil? %>
+  <h1><%=@garrage.address%>의 stuff 목록</h1>
+<% else %>
+  <h1>전체 stuff 목록</h1>
+<% end %>
 
 <table>
   <thead>
@@ -32,4 +36,6 @@
 
 <br>
 
-<%# link_to 'New Stuff', new_garrage_stuff_path %>
+<% unless @garrage.nil? %>
+  <%= link_to 'New Stuff', new_garrage_stuff_path(@garrage) %>
+<% end %>
