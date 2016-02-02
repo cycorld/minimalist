@@ -18,7 +18,7 @@
         <td><%= garrage.address %></td>
         <td><%= garrage.latitude %></td>
         <td><%= garrage.longitude %></td>
-        <td><%= link_to 'Show', garrage %></td>
+        <td><%= link_to 'Show', garrage_stuffs_path(garrage) %></td>
         <td><%= link_to 'Edit', edit_garrage_path(garrage) %></td>
         <td><%= link_to 'Destroy', garrage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

@@ -29,7 +29,7 @@ class GarragesController < ApplicationController
 
     respond_to do |format|
       if @garrage.save
-        format.html { redirect_to @garrage, notice: 'Garrage was successfully created.' }
+        format.html { redirect_to garrage_stuffs_path(@garrage), notice: 'Garrage was successfully created.' }
         format.json { render :show, status: :created, location: @garrage }
       else
         format.html { render :new }
