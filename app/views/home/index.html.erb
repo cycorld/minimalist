@@ -68,9 +68,15 @@
         <button type="button" class="modal-close" data-dismiss="modal" aria-label="Cloas"><span aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body">
+        <% @stuffs.each do |stuff| %>
+          <ul>
+            <td><%= stuff.image %></td>
+          </ul>
+        <% end %>
       </div>
       <div class="modal-footer">
         <div class="actions">
+          <button type="button">상세보기</button>
         </div>
       </div>
   </div><!-- midal-content -->

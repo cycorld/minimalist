@@ -5,6 +5,12 @@ class HomeController < ApplicationController
   # GET /garrages.json
   def index
     @garrages = Garrage.all
+    @garrage = Garrage.find_by(id: params[:garrage_id])
+    if params[:garrage_id].present?
+      @stuffs = @garrage.stuffs
+    else
+      @stuffs = Stuff.all
+    end
     @garrage = Garrage.new
   end
 
