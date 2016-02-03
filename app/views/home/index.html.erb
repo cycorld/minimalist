@@ -60,7 +60,21 @@
       </div>
     <% end %>
   </div><!-- midal-content -->
-</div><!-- modal -->
+</div><!-- modal1 -->
+
+<div id="modal2" class="modal">
+  <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="modal-close" data-dismiss="modal" aria-label="Cloas"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <div class="actions">
+        </div>
+      </div>
+  </div><!-- midal-content -->
+</div><!-- modal2 -->
 
 <script type="text/javascript">
   var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -71,13 +85,6 @@
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 17,
       center: myLatLng
-    });
-
-    var contentString = 'hi';
-
-    var infowindow = new google.maps.InfoWindow({
-      content: contentString,
-      maxWidth: 200
     });
 
     google.maps.event.addListener(map, 'click', function(event) {
@@ -91,14 +98,19 @@
     });
 
     <% Garrage.all.each do |g| %>
-      addMarker(new google.maps.LatLng(<%= g.latitude %>,<%= g.longitude %>), map);
-    <% end %>
-  }
+      var pos = new google.maps.LatLng(<%= g.latitude %>,<%= g.longitude %>);
 
-  function addMarker(location, map) {
-    var marker = new google.maps.Marker({
-      position: location,
-      label: labels[labelIndex++ % labels.length],
-      map: map
-    });
+      var marker = new google.maps.Marker({
+        position: pos,
+        label: labels[labelIndex++ % labels.length]
+      });
+
+      marker.setMap(map);
+
+      google.maps.event.addListener(marker, 'click', function(event) {
+        $('#modal2').openModal();
+      });
+
+    <% end %>
+
   }
