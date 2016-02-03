@@ -32,18 +32,31 @@
 
 <div id="modal1" class="modal">
   <div class="modal-content">
-    <%= form_tag '/garrages', multipart: true do %>
+    <%= form_for(@garrage) do |f| %>
       <div class="modal-header">
         <button type="button" class="modal-close" data-dismiss="modal" aria-label="Cloas"><span aria-hidden="true">&times;</span></button>
         <h2 class="modal-title">새로운 Garrage 등록</h2>
       </div>
       <div class="modal-body">
-        주소 : <input type="text" name="address" id="address">
-        lat : <input type="text" name="lat" id="lat">
-        lng : <input type="text" name="lng" id="lng">
+        <div class="field">
+          <%= f.label :address %>
+          <%= f.text_field :address %>
+        </div>
+
+        <div class="field">
+          <%= f.label :latitude %>
+          <%= f.text_field :latitude, value: params[:lat] %>
+        </div>
+
+        <div class="field">
+          <%= f.label :longitude %>
+          <%= f.text_field :longitude, value: params[:lng] %>
+        </div>
       </div>
       <div class="modal-footer">
-        <input type="submit" class="btn btn-primary" value="save">
+        <div class="actions">
+          <%= f.submit %>
+        </div>
       </div>
     <% end %>
   </div><!-- midal-content -->
@@ -71,8 +84,8 @@
        var lat = event.latLng.lat();
        var lng = event.latLng.lng();
 
-       $('#lat').val(lat);
-       $('#lng').val(lng);
+       $('#garrage_latitude').val(lat);
+       $('#garrage_longitude').val(lng);
 
       $('#modal1').openModal();
     });
