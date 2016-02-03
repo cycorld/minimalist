@@ -32,41 +32,6 @@
 
     <%= yield %>
 
-    <script type="text/javascript">
-      var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-      var labelIndex = 0;
-
-      function initMap() {
-        var myLatLng = {lat: 37.5639, lng: 126.9031};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 17,
-          center: myLatLng
-        });
-
-        var contentString = 'hi';
-
-        var infowindow = new google.maps.InfoWindow({
-          content: contentString,
-          maxWidth: 200
-        });
-
-       /* google.maps.event.addListener(map, 'click', function(event) {
-          location.href="/garrages/new?lat=" + event.latLng.lat() + "&lng=" + event.latLng.lng();
-        }); */
-
-        <% Garrage.all.each do |g| %>
-            addMarker(new google.maps.LatLng(<%= g.latitude %>,<%= g.longitude %>), map);
-        <% end %>
-      }
-
-      function addMarker(location, map) {
-        var marker = new google.maps.Marker({
-          position: location,
-          label: labels[labelIndex++ % labels.length],
-          map: map
-        });
-      }
-
     </script>
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBetvh03PhdJcNsggLq66l8HeO04SJCpDs&callback=initMap">
