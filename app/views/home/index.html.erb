@@ -1,4 +1,34 @@
-<h1>Must Have</h1>
-<p>Google Map Here!</p>
+<div id="container" class="st-container">
+  <div class="content-section garrage-list">
+    <div class="garrage_google_map" id="map"></div>
+  </div>
 
-<div id="map"></div>
+  <h1>Garrages</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Address</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @garrages.each do |garrage| %>
+        <tr>
+          <td><%= garrage.address %></td>
+          <td><%= garrage.latitude %></td>
+          <td><%= garrage.longitude %></td>
+          <td><%= link_to 'Show', garrage %></td>
+          <td><%= link_to 'Edit', edit_garrage_path(garrage) %></td>
+          <td><%= link_to 'Destroy', garrage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+</div>

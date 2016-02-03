@@ -8,8 +8,6 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %> <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
     <style type="text/css">
-      html, body { height: 100%; margin: 0; padding: 0; }
-      #map { height: 100%; }
     </style>
   </head>
 
@@ -21,9 +19,9 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="/">Home</a></li>
                <% if user_signed_in? %>
-                 <li><%= link_to 'Sign Out', destroy_user_session_path, :method => 'delete' %></li>
                  <li><%= link_to 'Garrages', garrages_path %></li>
                  <li><%= link_to 'Stuffs', stuffs_path %></li>
+                 <li><%= link_to 'Sign Out', destroy_user_session_path, :method => 'delete' %></li>
                <% else %>
                  <li><%= link_to 'Log In', new_user_session_path %></li>
                  <li><%= link_to 'Sign Up', destroy_user_session_path, :method => 'delete' %></li>
@@ -31,9 +29,6 @@
         </ul>
       </div>
     </nav>
-
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
 
     <%= yield %>
 
@@ -53,12 +48,11 @@
         var infowindow = new google.maps.InfoWindow({
           content: contentString,
           maxWidth: 200
-         // infowindow.open(map, marker);
         });
 
-        google.maps.event.addListener(map, 'click', function(event) {
+       /* google.maps.event.addListener(map, 'click', function(event) {
           location.href="/garrages/new?lat=" + event.latLng.lat() + "&lng=" + event.latLng.lng();
-        });
+        }); */
 
         <% Garrage.all.each do |g| %>
             addMarker(new google.maps.LatLng(<%= g.latitude %>,<%= g.longitude %>), map);
@@ -73,7 +67,6 @@
         });
       }
 
-      google.maps.event.addDomListener(window, 'load', initMap);
     </script>
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBetvh03PhdJcNsggLq66l8HeO04SJCpDs&callback=initMap">

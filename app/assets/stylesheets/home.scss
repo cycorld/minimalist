@@ -1,3 +1,29 @@
-#map {
-		height: 100%;
+html, body {
+  height: 100%; margin: 0; padding: 0;
+}
+
+/* map 크기 조절 */
+.st-container {
+  position: relative;
+  z-index: 999;
+  background: #faf8f6;
+}
+
+#container {
+  padding: 0 5%;
+  .content-section {
+    position: relative;
+    padding: 3% 0;
+    .garrage_google_map {
+      height: 480px;
+    }
+  }
+}
+
+/* main garrage list */
+#container {
+  h1 {
+    margin: 0;
+    font-size: 2em;
+  }
 }
