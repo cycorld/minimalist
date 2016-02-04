@@ -6,6 +6,7 @@ class CreateStuffs < ActiveRecord::Migration[5.0]
       t.integer :price
       t.integer :status
       t.string :image
+      t.integer :garrage_id
 
       t.timestamps
     end
