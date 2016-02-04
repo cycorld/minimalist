@@ -1,11 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Image:</strong>
-  <%= @stuff.image %>
-</p>
-
-<p>
   <strong>Title:</strong>
   <%= @stuff.title %>
 </p>
@@ -23,6 +18,11 @@
 <p>
   <strong>Status:</strong>
   <%= @stuff.status %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @stuff.image %>
 </p>
 
 <%= link_to 'Edit', edit_garrage_stuff_path(@stuff) %> |

@@ -4,6 +4,7 @@ gem 'devise', git: 'https://github.com/plataformatec/devise.git'
 
 gem 'carrierwave'
 
+gem 'mini_magick'
 gem 'materialize-sass'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '>= 5.0.0.beta1.1', '< 5.1'
