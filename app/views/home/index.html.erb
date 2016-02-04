@@ -71,20 +71,17 @@
       </div>
       <div class="modal-footer">
         <div class="actions">
-          <button type="button">상세보기</button>
+          <a class="waves-effect waves-light btn" id="stuff_tag">See More</a>
         </div>
       </div>
   </div><!-- midal-content -->
 </div><!-- modal2 -->
 
 <script type="text/javascript">
-  var labels = '0123456789';
-  var labelIndex = 0;
-
   function initMap() {
     var myLatLng = {lat: 37.5639, lng: 126.9031};
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 17,
+      zoom: 15,
       center: myLatLng
     });
 
@@ -103,7 +100,7 @@
 
       var marker = new google.maps.Marker({
         position: pos,
-        label: labels[<%= g.id %>]
+        label: <%= g.id %>
       });
 
       marker.setMap(map);
@@ -123,8 +120,8 @@
             }
           }
         });
+        $('#stuff_tag').attr("href", "/garrages/<%=g.id%>/stuffs")
       });
-
     <% end %>
 
   }
