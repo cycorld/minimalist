@@ -31,11 +31,11 @@ ActiveRecord::Schema.define(version: 20160201063442) do
   end
 
   create_table "stuffs", force: :cascade do |t|
-    t.string   "image"
     t.string   "title"
     t.text     "content"
     t.integer  "price"
     t.integer  "status"
+    t.string   "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "garrage_id"

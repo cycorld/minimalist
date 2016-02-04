@@ -17,7 +17,7 @@
 
     <tbody>
       <% @garrages.each do |garrage| %>
-        <tr>
+        <tr data-stuffs-count="<%= garrage.stuffs.count %>">
           <td><%= garrage.address %></td>
           <td><%= garrage.latitude %></td>
           <td><%= garrage.longitude %></td>
@@ -68,11 +68,6 @@
         <button type="button" class="modal-close" data-dismiss="modal" aria-label="Cloas"><span aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body">
-        <% @stuffs.each do |stuff| %>
-          <ul>
-            <td><%= stuff.image %></td>
-          </ul>
-        <% end %>
       </div>
       <div class="modal-footer">
         <div class="actions">
@@ -83,7 +78,7 @@
 </div><!-- modal2 -->
 
 <script type="text/javascript">
-  var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  var labels = '0123456789';
   var labelIndex = 0;
 
   function initMap() {
@@ -103,18 +98,31 @@
       $('#modal1').openModal();
     });
 
-    <% Garrage.all.each do |g| %>
+    <% @garrages.each do |g| %>
       var pos = new google.maps.LatLng(<%= g.latitude %>,<%= g.longitude %>);
 
       var marker = new google.maps.Marker({
         position: pos,
-        label: labels[labelIndex++ % labels.length]
+        label: labels[<%= g.id %>]
       });
 
       marker.setMap(map);
 
       google.maps.event.addListener(marker, 'click', function(event) {
         $('#modal2').openModal();
+        $.ajax({
+          url: '/garrages/<%= g.id %>/stuffs.json',
+          type: 'get',
+          success: function(response) {
+            $('#modal2 .modal-body').html('');
+
+            for(var i=0; i < response.length; i++) {
+              var $img = $('<img />');
+              $img.attr('src', response[i].image.url);
+              $('#modal2 .modal-body').append($img);
+            }
+          }
+        });
       });
 
     <% end %>
