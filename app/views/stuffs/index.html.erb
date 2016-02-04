@@ -9,11 +9,11 @@
 <table>
   <thead>
     <tr>
-      <th>Image</th>
       <th>Title</th>
       <th>Content</th>
       <th>Price</th>
       <th>Status</th>
+      <th>Image</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -21,11 +21,11 @@
   <tbody>
     <% @stuffs.each do |stuff| %>
       <tr>
-        <td><%= stuff.image %></td>
         <td><%= stuff.title %></td>
         <td><%= stuff.content %></td>
         <td><%= stuff.price %></td>
         <td><%= stuff.status %></td>
+        <td><img src="<%= stuff.image_url %>"</td>
         <td><%= link_to 'Show', garrage_stuff_path(stuff.garrage,stuff) %></td>
         <td><%= link_to 'Edit', edit_garrage_stuff_path(stuff.garrage,stuff) %></td>
         <td><%= link_to 'Destroy', garrage_stuff_path(stuff.garrage,stuff), method: :delete, data: { confirm: 'Are you sure?' } %></td>
