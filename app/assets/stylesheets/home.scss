@@ -27,3 +27,29 @@ html, body {
     font-size: 2em;
   }
 }
+
+/* navbar */
+
+.siteHeader {
+  min-height: 76px;
+  overflow: visible;
+  background-color: #EAEAEA;
+  color: #f4f4f4;
+  position: relative;
+  z-index: 9999;
+  .nav-wrapper {
+    margin: 0 3%;
+    .brand-logo {
+      height: 100%;
+      position: relative;
+      float: left;
+      display: inline-block;
+      img {
+        height: 100%;
+      }
+    }
+  }
+  a {
+    outline: 0;
+  }
+}
