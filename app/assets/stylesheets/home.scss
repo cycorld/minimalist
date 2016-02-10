@@ -53,3 +53,16 @@ html, body {
     outline: 0;
   }
 }
+
+.right {
+  text-transform: uppercase;
+  line-height: 76px;
+  li {
+    display: inline-block;
+    a {
+      display: block;
+      font-size: 15px;
+      color: #8E8E8E;
+    }
+  }
+}

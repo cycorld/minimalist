@@ -80,10 +80,12 @@
 <script type="text/javascript">
   function initMap() {
     var myLatLng = {lat: 37.5639, lng: 126.9031};
-    var map = new google.maps.Map(document.getElementById('map'), {
+    var mapOptions = {
       zoom: 15,
       center: myLatLng
-    });
+    };
+
+    map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
     google.maps.event.addListener(map, 'click', function(event) {
        var lat = event.latLng.lat();

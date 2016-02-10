@@ -3,17 +3,15 @@
     <a href="/" class="brand-logo">
       <img src="/logo.jpg">
     </a>
-    <div class="nav primaryNav" id="siteNav" role="navigation">
       <ul class="right hide-on-med-and-down">
         <li><a href="/">Home</a></li>
         <% if user_signed_in? %>
           <li><%= link_to 'Garrages', garrages_path %></li>
           <li><%= link_to 'Stuffs', stuffs_path %></li>
-          <li><%= link_to 'Sign Out', destroy_user_session_path, :method => 'delete' %></li>
+          <li><%= link_to 'SignOut', destroy_user_session_path, :method => 'delete' %></li>
         <% else %>
-          <li><%= link_to 'Log In', new_user_session_path %></li>
+          <li><%= link_to 'LogIn', new_user_session_path %></li>
         <% end %>
       </ul>
-    </div>
   </div>
 </nav>
