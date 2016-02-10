@@ -11,6 +11,13 @@ class StuffsController < ApplicationController
       @stuffs = Stuff.all
     end
 
+    respond_to do |format|
+      format.json do
+        render json: @stuffs
+      end
+
+      format.html
+    end
   end
 
   # GET /stuffs/1
