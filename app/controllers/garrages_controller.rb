@@ -70,6 +70,6 @@ class GarragesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def garrage_params
-      params.require(:garrage).permit(:address, :title, :latitude, :longitude)
+      params.require(:garrage).permit(:address, :title, :latitude, :longitude, :image)
     end
 end
