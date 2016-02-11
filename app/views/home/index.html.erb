@@ -84,6 +84,20 @@
 
 <script type="text/javascript">
   function initMap() {
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+
+        map.setCenter(pos);
+        }, function() {
+      });
+      } else {
+    }
+
     var myLatLng = {lat: 37.5639, lng: 126.9031};
     var mapOptions = {
       zoom: 15,
