@@ -3,26 +3,21 @@
     <div class="garrage_google_map" id="map"></div>
   </div>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Address</th>
-        <th>image</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @garrages.each do |garrage| %>
-        <tr data-stuffs-count="<%= garrage.stuffs.count %>">
-          <td><%= garrage.title %></td>
-          <td><%= garrage.address %></td>
-          <td><img src="<%= garrage.image %>"></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <div class="content">
+    <% @garrages.each do |garrage| %>
+      <div class="each-content">
+        <a href="/garrages/<%= garrage.id %>/stuffs">
+          <img class="content-image" src="<%= garrage.image_url(:medium) %>">
+        </a>
+        <div class="icon-title">
+          <%= garrage.title %>
+        </div>
+        <div class="info-address">
+          <h3><%= garrage.address %></h3>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 <div id="modal1" class="modal">
