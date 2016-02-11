@@ -70,6 +70,8 @@
       <div class="modal-header">
         <button type="button" class="modal-close" data-dismiss="modal" aria-label="Cloas"><span aria-hidden="true">&times;</span></button>
       </div>
+      <div class="modal-title">
+      </div>
       <div class="modal-body">
       </div>
       <div class="modal-footer">
@@ -116,6 +118,7 @@
           url: '/garrages/<%= g.id %>/stuffs.json',
           type: 'get',
           success: function(response) {
+            $('#modal2 .modal-title').html('<%= g.title %>');
             $('#modal2 .modal-body').html('');
 
             for(var i=0; i < response.length; i++) {
