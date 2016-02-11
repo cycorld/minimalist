@@ -1,7 +1,3 @@
-<%#= form_tag({:action => :upload}, :multipart => true) do %>
-  <%#= file_field_tag 'image' %>
-<%# end %>
-
 <%= form_for([@stuff.garrage, stuff]) do |f| %>
   <% if stuff.errors.any? %>
     <div id="error_explanation">
@@ -16,27 +12,27 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %>
+    <%= f.label :제목 %>
     <%= f.text_field :title %>
   </div>
 
   <div class="field">
-    <%= f.label :content %>
+    <%= f.label :내용 %>
     <%= f.text_area :content %>
   </div>
 
   <div class="field">
-    <%= f.label :price %>
+    <%= f.label :가격 %>
     <%= f.number_field :price %>
   </div>
 
   <div class="field">
-    <%= f.label :status %>
+    <%= f.label :상태 %>
     <%= f.number_field :status %>
   </div>
 
   <div class="field">
-    <%= f.label :image %>
+    <%= f.label :이미지 %>
     <%= f.file_field :image %>
   </div>
 
