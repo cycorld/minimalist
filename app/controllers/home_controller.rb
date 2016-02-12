@@ -5,8 +5,9 @@ class HomeController < ApplicationController
   # GET /garrages.json
   def index
     @garrages = Garrage.all
-    @garrage = Garrage.find_by(id: params[:garrage_id])
+    #@garrage = Garrage.find_by(id: params[:garrage_id])
     @garrage = Garrage.new
+   # @stuffs = @garrage.stuffs
   end
 
 end
