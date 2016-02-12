@@ -1,5 +1,6 @@
 class GarragesController < ApplicationController
   before_action :set_garrage, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /garrages
   # GET /garrages.json
