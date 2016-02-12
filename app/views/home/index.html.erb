@@ -17,11 +17,14 @@
             <h3><%= garrage.address %></h3>
           </div>
         </div>
-        <div class="stuff-content">
-          <div class="carousel">
-            <% garrage.stuffs.each do |stuff| %>
-              <a class="carousel-item"><img src="<%= stuff.image_url %>"></a>
-            <% end %>
+        <!-- Swiper -->
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+        <% garrage.stuffs.each do |stuff| %>
+          <div class="swiper-slide">
+            <img src="<%= stuff.image_url %>">
+          </div>
+        <% end %>
           </div>
         </div>
       </div>
