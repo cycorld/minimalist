@@ -20,11 +20,17 @@
         <!-- Swiper -->
         <div class="swiper-container">
           <div class="swiper-wrapper">
-        <% garrage.stuffs.each do |stuff| %>
-          <div class="swiper-slide">
-            <img src="<%= stuff.image_url %>">
-          </div>
-        <% end %>
+            <% if garrage.stuffs.empty? %>
+              <div class="empty-box">
+                <h3>아직 상품이 준비되지 않았습니다.</h3>
+              </div>
+            <% else %>
+              <% garrage.stuffs.each do |stuff| %>
+                <div class="swiper-slide">
+                  <img src="<%= stuff.image_url %>">
+                </div>
+              <% end %>
+            <% end %>
           </div>
         </div>
       </div>

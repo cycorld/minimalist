@@ -89,6 +89,14 @@ html, body {
   }
 }
 
+.empty-box {
+  width: 100%;
+  text-align: center;
+  h3 {
+    line-height: 230px;
+  }
+}
+
 .swiper-slide {
   text-align: center;
   font-size: 18px;
@@ -117,10 +125,6 @@ html, body {
 }
 .swiper-slide:nth-child(3n) {
     width: 20%;
-}
-
-.carousel .carousel-item {
-  width: 230px !important;
 }
 
 .each-content {
