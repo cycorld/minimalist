@@ -103,6 +103,7 @@ html, body {
   text-align: center;
   h3 {
     line-height: 230px;
+    font-size: 1.5em;
   }
 }
 
@@ -161,6 +162,74 @@ html, body {
     h3 {
       margin: 0;
       font-size: 15px;
+    }
+  }
+}
+
+/* modal view */
+.modal {
+  top: 15% !important;
+  width: 85% !important;
+  .modal-content {
+    padding: 15px;
+  }
+  .modal-header {
+    float: right;
+    overflow: hidden;
+  }
+  .modal-title {
+    display: block;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
+    h2 {
+      font-size: 1.7em;
+      letter-spacing: 30px;
+      font-weight: 800;
+    }
+  }
+  .modal-body {
+    margin-top: 30px;
+    .field {
+      overflow: hidden;
+    }
+    img {
+      height: 250px;
+      width: 300px;
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+    label {
+      font-size: 1.5em;
+      display: inline-block;
+      line-height: 2.5em;
+      float: left;
+      overflow: hidden;
+      text-transform: uppercase;
+      color: #FC827B;
+    }
+    input[type=text] {
+      font-size: 1.3em;
+      width: 50% !important;
+      float: right;
+      overflow: hidden;
+    }
+    input[type=file] {
+      margin-top: 20px;
+      width: 50%;
+      float: right;
+      overflow: hidden;
+    }
+  }
+  .modal-footer {
+    .actions {
+      margin-bottom: 0px;
+      margin-top: 20px;
+      input[type="submit"] {
+        float: right;
+        overflow: hidden;
+      }
     }
   }
 }
