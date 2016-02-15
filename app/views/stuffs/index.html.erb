@@ -5,14 +5,14 @@
 
   <% @stuffs.each do |stuff| %>
     <div class="each-content">
-      <a href="/stuff">
+      <a href="/garrages/<%= stuff.garrage.id %>/stuffs/<%= stuff.id %>">
         <img class="content-image" src="<%= stuff.image_url(:medium) %>">
       </a>
       <div class="icon-title">
         <%= stuff.title %>
       </div>
       <div class="info-price">
-        <h3><%= stuff.price %></h3>
+        <h3><%= stuff.price %> 원</h3>
       </div>
     </div>
   <% end %>
