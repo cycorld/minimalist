@@ -1,40 +1,25 @@
-<% unless @garrage.nil? %>
-  <h1><%=@garrage.address%>의 stuff 목록</h1>
-<% else %>
-  <h1>전체 stuff 목록</h1>
-<% end %>
+<div class="stuff-container">
+  <div class="stuff-talk">
+    <img src="stuff2.png">
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>Price</th>
-      <th>Status</th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <% @stuffs.each do |stuff| %>
+    <div class="each-content">
+      <a href="/stuff">
+        <img class="content-image" src="<%= stuff.image_url(:medium) %>">
+      </a>
+      <div class="icon-title">
+        <%= stuff.title %>
+      </div>
+      <div class="info-price">
+        <h3><%= stuff.price %></h3>
+      </div>
+    </div>
+  <% end %>
 
-  <tbody>
-    <% @stuffs.each do |stuff| %>
-      <tr>
-        <td><%= stuff.title %></td>
-        <td><%= stuff.content %></td>
-        <td><%= stuff.price %></td>
-        <td><%= stuff.status %></td>
-        <td><img src="<%= stuff.image_url(:medium) %>"</td>
-        <td><%= link_to 'Show', garrage_stuff_path(stuff.garrage,stuff) %></td>
-        <td><%= link_to 'Edit', edit_garrage_stuff_path(stuff.garrage,stuff) %></td>
-        <td><%= link_to 'Destroy', garrage_stuff_path(stuff.garrage,stuff), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <br>
 
-<br>
-
-
-<% unless @garrage.nil? %>
-  <%= link_to 'New Stuff', new_garrage_stuff_path(@garrage) %>
-<% end %>
+  <% unless @garrage.nil? %>
+    <%= link_to 'New Stuff', new_garrage_stuff_path(@garrage) %>
+  <% end %>
+</div>
