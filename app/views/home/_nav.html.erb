@@ -6,11 +6,11 @@
     <ul class="right hide-on-med-and-down">
       <li><a href="/">Home</a></li>
       <% if user_signed_in? %>
-        <li><%= link_to 'Stuffs', stuffs_path %></li>
-        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Mypage</a></li>
+        <li><%= link_to 'All Stuffs', stuffs_path %></li>
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">My page</a></li>
         <ul id="dropdown1" class="dropdown-content">
-          <li><a href="#!">mygarrage</a></li>
-          <li><a href="#!">mystuff</a></li>
+          <li><a href="#!">my garrage</a></li>
+          <li><a href="#!">my stuff</a></li>
           <li class="divider"></li>
           <li><%= link_to 'SignOut', destroy_user_session_path, :method => 'delete' %></li>
         </ul>
