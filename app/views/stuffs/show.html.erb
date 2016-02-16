@@ -1,48 +1,49 @@
-<p id="notice"><%= notice %></p>
+<div class="stuff-container">
+  <div class="show-view">
+    <div class="main-title">
+      <img src="/stuff-show.png">
+      <h3><%= @stuff.title %></h3>
+    </div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @stuff.title %>
-</p>
+    <p>
+    <strong>Content:</strong>
+    <%= @stuff.content %>
+    </p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @stuff.content %>
-</p>
+    <p>
+    <strong>Price:</strong>
+    <%= @stuff.price %>
+    </p>
 
-<p>
-  <strong>Price:</strong>
-  <%= @stuff.price %>
-</p>
+    <p>
+    <strong>Status:</strong>
+    <%= @stuff.status %>
+    </p>
 
-<p>
-  <strong>Status:</strong>
-  <%= @stuff.status %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @stuff.image %>
-</p>
-
-<%= link_to 'Edit', edit_garrage_stuff_path(@stuff) %> |
-<%= link_to 'Back', garrage_stuffs_path %>
-<hr>
-
-<% @comments.each do |x| %>
-  <%= x.user.email %> | <%= x.message %><br>
-<% end %>
-
-
-<hr>
-
-<%= form_for([@garrage, @stuff, @comment]) do |f| %>
-  <div class="field">
-    <%= f.label :message %>
-    <%= f.text_field :message %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<%end %>
+  <img class="stuff-image" src="<%= @stuff.image %>">
+
+
+  <%= link_to 'Edit', edit_garrage_stuff_path(@stuff) %> |
+  <%= link_to 'Back', garrage_stuffs_path %>
+  <hr>
+
+  <% @comments.each do |x| %>
+    <%= x.user.email %> | <%= x.message %><br>
+  <% end %>
+
+
+  <hr>
+
+  <%= form_for([@garrage, @stuff, @comment]) do |f| %>
+    <div class="field">
+      <%= f.label :message %>
+      <%= f.text_field :message %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>

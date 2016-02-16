@@ -17,3 +17,66 @@
     width: 50% !important;
   }
 }
+
+/* content list */
+.stuff-container {
+  margin: 0 8% 0 8%;
+  height: 100%;
+  .stuff-talk {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0 20px 0;
+  }
+}
+.each-content {
+  margin-bottom: 30px;
+  border: 1px solid #C7C3BD;
+  height: 270px;
+  margin-left: 13px;
+  margin-right: 13px;
+  float: left;
+  overflow: hidden;
+  width: 23%;
+  .content-image {
+    display: block;
+    width: 100%;
+    height: 225px;
+  }
+  .icon-title {
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: 15px;
+    letter-spacing: 0;
+    float: left;
+    overflow: hidden;
+    padding: 13px;
+    color: #FC817B;
+  }
+  .info-price {
+    display: inline-block;
+    padding: 13px;
+    float: right;
+    h3 {
+      margin: 0;
+      font-size: 15px;
+    }
+  }
+}
+
+/* stuff show page */
+.stuff-container {
+  margin-top: 3%;
+  h3 {
+    font-size: 2em;
+  }
+  .show-view {
+    width: 65%;
+    display: inline-block;
+  }
+}
+
+.stuff-image {
+  width: 32%;
+  float: right;
+  overflow: hidden;
+}

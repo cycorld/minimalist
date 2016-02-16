@@ -5,19 +5,37 @@
 
   <div class="content">
     <% @garrages.each do |garrage| %>
-      <div class="each-content">
-        <a href="/garrages/<%= garrage.id %>/stuffs">
-          <img class="content-image" src="<%= garrage.image_url(:medium) %>">
-        </a>
-        <div class="icon-title">
-          <%= garrage.title %>
+      <div class="content-row">
+        <div class="each-content">
+          <a href="/garrages/<%= garrage.id %>/stuffs">
+            <img class="content-image" src="<%= garrage.image_url(:medium) %>" onerror="this.src='default.png';" >
+          </a>
+          <div class="icon-title">
+            <%= garrage.title %>
+          </div>
+          <div class="info-address">
+            <h3><%= garrage.address %></h3>
+          </div>
         </div>
-        <div class="info-address">
-          <h3><%= garrage.address %></h3>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <% if garrage.stuffs.empty? %>
+              <div class="empty-box">
+                <h3>아직 상품이 준비되지 않았습니다.</h3>
+              </div>
+            <% else %>
+              <% garrage.stuffs.each do |stuff| %>
+                <div class="swiper-slide">
+                  <img src="<%= stuff.image_url %>">
+                </div>
+              <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
     <% end %>
   </div>
+
 </div>
 
 <div id="modal1" class="modal">
@@ -25,7 +43,9 @@
     <%= form_for(@garrage) do |f| %>
       <div class="modal-header">
         <button type="button" class="modal-close" data-dismiss="modal" aria-label="Cloas"><span aria-hidden="true">&times;</span></button>
-        <h2 class="modal-title">등록</h2>
+      </div>
+      <div class="modal-title">
+        <h2>등록</h2>
       </div>
       <div class="modal-body">
         <div class="field">

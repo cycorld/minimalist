@@ -54,6 +54,15 @@ html, body {
   }
 }
 
+#dropdown1 {
+  width: 130px !important;
+  top: 76px !important;
+  li {
+    text-transform: uppercase;
+    text-align: center;
+  }
+}
+
 .right {
   text-transform: uppercase;
   line-height: 76px;
@@ -72,19 +81,70 @@ html, body {
 .content {
   position: relative;
   display: inline-block;
-  width: 300px;
-  margin-right: 20px;
+  width: 100%;
+  .content-row {
+    overflow: hidden;
+  }
   .content-image {
     display: block;
     width: 100%;
-    min-height: 225px;
+    height: 225px;
   }
+  .swiper-container {
+    width: 70%;
+    float: right;
+    overflow: hidden;
+    height: 270px;
+  }
+}
+
+.empty-box {
+  width: 100%;
+  text-align: center;
+  h3 {
+    line-height: 230px;
+    font-size: 1.5em;
+  }
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  width: 60%;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+.swiper-slide:nth-child(2n) {
+    width: 40%;
+}
+.swiper-slide:nth-child(3n) {
+    width: 20%;
 }
 
 .each-content {
   margin-bottom: 30px;
   border: 1px solid #C7C3BD;
   height: 270px;
+  margin-right: 20px;
+  float: left;
+  overflow: hidden;
+  width: 27%;
   .icon-title {
     display: inline-block;
     box-sizing: border-box;
@@ -102,6 +162,74 @@ html, body {
     h3 {
       margin: 0;
       font-size: 15px;
+    }
+  }
+}
+
+/* modal view */
+.modal {
+  top: 15% !important;
+  width: 85% !important;
+  .modal-content {
+    padding: 15px;
+  }
+  .modal-header {
+    float: right;
+    overflow: hidden;
+  }
+  .modal-title {
+    display: block;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
+    h2 {
+      font-size: 1.7em;
+      letter-spacing: 30px;
+      font-weight: 800;
+    }
+  }
+  .modal-body {
+    margin-top: 30px;
+    .field {
+      overflow: hidden;
+    }
+    img {
+      height: 250px;
+      width: 300px;
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+    label {
+      font-size: 1.5em;
+      display: inline-block;
+      line-height: 2.5em;
+      float: left;
+      overflow: hidden;
+      text-transform: uppercase;
+      color: #FC827B;
+    }
+    input[type=text] {
+      font-size: 1.3em;
+      width: 50% !important;
+      float: right;
+      overflow: hidden;
+    }
+    input[type=file] {
+      margin-top: 20px;
+      width: 50%;
+      float: right;
+      overflow: hidden;
+    }
+  }
+  .modal-footer {
+    .actions {
+      margin-bottom: 0px;
+      margin-top: 20px;
+      input[type="submit"] {
+        float: right;
+        overflow: hidden;
+      }
     }
   }
 }

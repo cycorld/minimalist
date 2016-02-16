@@ -3,15 +3,20 @@
     <a href="/" class="brand-logo">
       <img src="/logo.jpg">
     </a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="/">Home</a></li>
-        <% if user_signed_in? %>
-          <li><%= link_to 'Garrages', garrages_path %></li>
-          <li><%= link_to 'Stuffs', stuffs_path %></li>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="/">Home</a></li>
+      <% if user_signed_in? %>
+        <li><%= link_to 'All Stuffs', stuffs_path %></li>
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">My page</a></li>
+        <ul id="dropdown1" class="dropdown-content">
+          <li><a href="#!">my garrage</a></li>
+          <li><a href="#!">my stuff</a></li>
+          <li class="divider"></li>
           <li><%= link_to 'SignOut', destroy_user_session_path, :method => 'delete' %></li>
-        <% else %>
-          <li><%= link_to 'LogIn', new_user_session_path %></li>
-        <% end %>
-      </ul>
+        </ul>
+      <% else %>
+        <li><%= link_to 'LogIn', new_user_session_path %></li>
+      <% end %>
+    </ul>
   </div>
 </nav>
